@@ -1,17 +1,22 @@
 import { ImAppleinc } from 'react-icons/im'
 import { PiGoogleLogoBold } from 'react-icons/pi'
-import { Link } from 'react-router-dom'
-
+import { Link, useNavigate } from 'react-router-dom'
 import LoginBG from '../../assets/loginBG.mp4'
 
 export const Login = () => {
+
+  const navigate = useNavigate()
+
+  function handleLogin() {
+    navigate('/');
+  }
   return (
     <>
       <video
         src={LoginBG}
         autoPlay={true}
         muted
-        className="bg-[#010001] absolute w-auto min-w-full min-h-full h-screen">
+        className="absolute w-auto min-w-full min-h-full h-screen">
       </video>
 
       <div className='relative flex justify-center items-center h-screen'>
@@ -19,7 +24,7 @@ export const Login = () => {
 
           <h1 className='text-xl font-medium'>Peça suas músicas de forma fácil!</h1>
 
-          <form className='flex flex-col gap-4 justify-around h-full'>
+          <form onSubmit={handleLogin} className='flex flex-col gap-4 justify-around h-full'>
 
             <div className='flex gap-4'>
               <div className='flex flex-col gap-3'>
