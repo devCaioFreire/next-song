@@ -9,6 +9,9 @@ export default {
       backgroundImage: {
         LoginBG: "url('/assets/loginBG.mp4')"
       },
+      gridTemplateColumns: {
+        layout: "70% 1fr"
+      }
     },
   },
   plugins: [],
