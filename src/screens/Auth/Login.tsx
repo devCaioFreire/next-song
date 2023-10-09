@@ -1,6 +1,8 @@
+import { ImAppleinc } from 'react-icons/im'
+import { PiGoogleLogoBold } from 'react-icons/pi'
+import { Link } from 'react-router-dom'
 
 import LoginBG from '../../assets/loginBG.mp4'
-import Logo from '../../assets/Logo.svg'
 
 export const Login = () => {
   return (
@@ -13,31 +15,38 @@ export const Login = () => {
       </video>
 
       <div className='relative flex justify-center items-center h-screen'>
-        <div className='bg-[#1B1B1B] shadow-2xl flex flex-col items-center justify-between gap-8 w-full h-full p-4 max-w-[500px] max-h-[400px] rounded-xl text-zinc-50'>
-          <img src={Logo} className='w-10 h-10 self-center' draggable={false} />
-          <h1>Peça suas músicas de forma fácil!</h1>
-          <form className='flex flex-col gap-4'>
+        <div className='shadow-2xl flex flex-col items-center gap-8 w-full h-full p-4 max-w-[500px] max-h-[500px] rounded-xl text-zinc-50'>
+
+          <h1 className='text-xl font-medium'>Peça suas músicas de forma fácil!</h1>
+
+          <form className='flex flex-col gap-4 justify-around h-full'>
 
             <div className='flex gap-4'>
               <div className='flex flex-col gap-3'>
                 <label>E-mail</label>
-                <input type="email" className='bg-transparent border-b py-1' />
+                <input type="email" className='bg-transparent border-b py-1 outline-none' />
               </div>
 
               <div className='flex flex-col gap-3'>
                 <label>Senha</label>
-                <input type="password" className='bg-transparent border-b py-1' />
+                <input type="password" className='bg-transparent border-b py-1 outline-none' />
               </div>
             </div>
 
+            <div className='flex items-center justify-center gap-14'>
+              <PiGoogleLogoBold className="w-14 h-14 transition-all hover:text-zinc-300" />
+              <ImAppleinc className="w-12 h-12 transition-all hover:text-zinc-300" />
+            </div>
+
             <button
-              className='w-full bg-[#EBEBEB] p-1 text-black font-medium transition-all rounded-md
+              className='w-full bg-[#EBEBEB] p-1 text-black font-medium transition-all rounded-md shadow-xl
             hover:bg-zinc-300'>
               Entrar
             </button>
 
           </form>
 
+          <span className='text-center'>Ainda não tem uma conta? <Link to={'/signup'} className='cursor-pointer font-medium'>Registre-se aqui!</Link></span>
         </div>
       </div>
 

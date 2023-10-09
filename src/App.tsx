@@ -1,11 +1,11 @@
-import { Login } from "./screens/Auth/Login"
-
+import { BrowserRouter } from 'react-router-dom'
+import { RouterApp } from './assets/routes/Router'
 function App() {
 
   return (
-    <>
-      <Login />
-    </>
+    <BrowserRouter>
+      <RouterApp />
+    </BrowserRouter>
   )
 }
 
